@@ -1,0 +1,183 @@
+:root {
+    --bg-light: #eee;
+    --bg-dark: #343541;
+    --text-light: #36395A;
+    --text-dark: #fff;
+    --bg-button: #FCFCFD;
+    --bg-input: #36395A;
+}
+
+body {
+    font-family: 'Fredoka One', cursive;
+    color: var(--text-light);
+    background-color: var(--bg-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+
+.price-tag {
+    display: inline-block;
+    width: auto;
+    height: 38px;
+    background-color: var(--bg-button);
+    border-radius: 3px 4px 4px 3px;
+    border-left: 1px solid var(--bg-button);
+    margin-left: 19px;
+    position: relative;
+    color: var(--text-light);
+    line-height: 38px;
+    padding: 0 10px 0 10px;
+}
+
+.price-tag:before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: -19px;
+    width: 0;
+    height: 0;
+    border-top: 19px solid transparent;
+    border-bottom: 19px solid transparent;
+    border-right: 19px solid var(--bg-button);
+}
+
+#txtOutput {
+    margin-top: 10px;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    border: none;
+}
+
+#txtOutput::placeholder {
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+}
+
+#btnSend {
+    align-items: center;
+    appearance: none;
+    background-color: var(--bg-button);
+    border-radius: 10px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: var(--text-light);
+    cursor: pointer;
+    display: inline-flex;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    font-size: 18px;
+    font-family: 'Fredoka One', cursive;
+}
+
+#btnSend:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+#btnSend:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+#btnSend:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+#lblSpeak, #lblMute {
+    font-size: 20px;
+    color: var(--text-light);
+}
+
+
+
+#selModel, #selLang, #selVoices {
+    color: var(--text-light);
+    border-radius: 10px;
+    font-family: 'Fredoka One', cursive;
+}
+
+#txtMsg {
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+    margin-left: 3px;
+    margin-top: 6px;
+}
+
+#txtMsg::placeholder {
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    width: auto;
+    height: 5px;
+}
+
+.checkbox-wrapper-25 input[type="checkbox"] {
+    background-image: -webkit-linear-gradient(hsla(0, 0%, 0%, 0.1), hsla(0, 0%, 100%, 0.1)),
+                      -webkit-linear-gradient(left, #f66 50%, #6cf 50%);
+    background-size: 100% 100%, 200% 100%;
+    background-position: 0 0, 15px 0;
+    border-radius: 25px;
+    box-shadow: inset 0 1px 4px hsla(0, 0%, 0%, 0.5),
+                inset 0 0 10px hsla(0, 0%, 0%, 0.5),
+                0 0 0 1px hsla(0, 0%, 0%, 0.1),
+                0 -1px 2px 2px hsla(0, 0%, 0%, 0.25),
+                0 2px 2px 2px hsla(0, 0%, 100%, 0.75);
+    cursor: pointer;
+    height: 20px;
+    padding-right: 25px;
+    margin-left: 25px;
+    margin-top: 10px;
+    width: 65px;
+    -webkit-appearance: none;
+    -webkit-transition: 0.25s;
+}
+
+.checkbox-wrapper-25 input[type="checkbox"]:after {
+    background-color: var(--bg-input);
+    background-image: -webkit-linear-gradient(hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 0%, 0.1));
+    border-radius: 25px;
+    box-shadow: inset 0 1px 1px 1px hsla(0, 0%, 100%, 1),
+                inset 0 -1px 1px 1px hsla(0, 0%, 0%, 0.25),
+                0 1px 3px 1px hsla(0, 0%, 0%, 0.5),
+                0 0 2px hsla(0, 0%, 0%, 0.25);
+    content: '';
+    display: block;
+    height: 19px;
+    width: 40px;
+}
+
+.checkbox-wrapper-25 input[type="checkbox"]:checked {
+    background-position: 0 0, 35px 0;
+    padding-left: 25px;
+    padding-right: 0;
+}
+
+#idText {
+    font-size: small;
+}
